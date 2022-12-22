@@ -20,49 +20,67 @@
 <body>
     <div id="app">
         <div class="container">
-            <header class="mb-5">
-                <h1 class="text-center">
+            <header class="my-3 d-flex justify-content-center">
+                <h1 class="text-center box w-25">
                     Array Di numeri
                 </h1>
             </header>
-            <div class="row">
-                <div class="col-6">
-                    <h4 class="mb-2">
-                        Inserisci la quantità di numeri che vuoi aggiungere:
-                    </h4>
+            <main>
+                <div class="row">
+                    <div class="col-6">
+                        <div id="generate-number" class="box">
+                            <h4 class="mb-2">
+                                Inserisci la quantità di numeri che vuoi aggiungere:
+                            </h4>
 
-                    <div class="input mb-2">
-                        <label class="me-2" for="insert">
-                            Quantità:
-                        </label>
+                            <div class="input mb-2">
+                                <label class="me-2" for="insert">
+                                    Quantità:
+                                </label>
 
-                        <input type="number" id="insert" v-model="amountOfNumbers">
+                                <input type="number" id="insert" v-model="amountOfNumbers"
+                                    @keyup.enter="addRandomNumber(amountOfNumbers)">
+                            </div>
+
+                            <div class="button">
+                                <button class="btn btn-primary " @click="addRandomNumber(amountOfNumbers)">
+                                    Aggiungi
+                                </button>
+                            </div>
+
+                            <div v-show="amountOfNumbers != null" class="output fs-4">
+                                <p class="text-success">
+                                    Stai per generare {{ amountOfNumbers }} numeri casuali
+                                </p>
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="button">
-                        <button class="btn btn-primary " @click="addRandomNumber(amountOfNumbers)">
-                            Aggiungi
-                        </button>
-                    </div>
+                    <div class="col-6">
+                        <div id="numbers" class="box">
+                            <h4 class="text-center">
+                                Numeri Causali Generati
+                            </h4>
 
+                            <p v-show="numbers.length != 0" class="text-center text-success fs-4">
+                                hai scelto di generare {{ numbers.length}} numeri
+                            </p>
+
+                            <ol>
+                                <li v-for="number in numbers">
+                                    {{ number }}
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-6">
-                    <div class="numbers">
-                        <h4 class="text-center">
-                            Numeri Causali Generati
-                        </h4>
+            </main>
 
-                        <ol>
-                            <li v-for="number in numbers">
-                                {{ number }}
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
         </div>
-    
+
         <!--Fine Div app-->
     </div>
 

@@ -1,3 +1,27 @@
-.line-trough {
-    text-decoration: line-through;
+body {
+    background-image: url('../imgs/bg-image.png');
+    background-position: center;
+
+}
+
+ol {
+    overflow: scroll;
+    max-height: 600px;
+}
+
+.box {
+    background-color: black;
+    opacity: .9;
+    color: white;
+    border-radius: 20px;
+    padding: .8rem;
+}
+
+
+#generate-number { 
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+#numbers {
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
