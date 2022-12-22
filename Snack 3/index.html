@@ -27,17 +27,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
+                    <h2 class="mb-3">
+                        Inserisci Messaggio
+                    </h2>
                     <div class="input mb-3">
                         <label for="add-text" class="me-1">Aggungi un messaggio alla Chat:</label>
                         <input type="text" id="add-text" v-model="textMessage">
                     </div>
 
                     <div class="button">
-                        <button class="btn btn-primary">
+                        <button 
+                        class="btn btn-primary"
+                        @click="addMessage(textMessage)">
                             Aggiungi
                         </button>
                     </div>
                 <!--And col-->
+                </div>
+
+                <div class="col-6">
+                    <h2 class="mb-3">
+                        Chat:
+                    </h2>
+                    
+                    <div class="body-chat d-flex flex-column">
+                        <span 
+                        :class="(messages[index].user) ? 'text-primary' : 'text-end text-success' " 
+                        v-for="message,index in messages">
+                            {{ message.text }}
+                        </span>
+                    </div>
                 </div>
                 
             <!--End Row-->

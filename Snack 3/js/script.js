@@ -8,10 +8,33 @@ createApp({
     data() {
         return {
             textMessage: '',
+            messages: 
+            [
+                {
+                    text: 'ciao',
+                    user: true,
+                },
+
+                {
+                    text: 'ehila, ciao',
+                    user: false,
+                }
+            ]
+            
         }
     },
 
     methods: {
+        addMessage: function (newMessage) {
+            this.messages.push(
+                {
+                    text: newMessage,
+                    user: true,
+                }
+            );
+
+            this.textMessage = "";
+        }
         
     },
 
