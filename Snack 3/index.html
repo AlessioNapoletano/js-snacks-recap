@@ -27,43 +27,47 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <h2 class="mb-3">
-                        Inserisci Messaggio
-                    </h2>
-                    <div class="input mb-3">
-                        <label for="add-text" class="me-1">Aggungi un messaggio alla Chat:</label>
-                        <input type="text" id="add-text" v-model="textMessage" 
-                        @keyup.enter="addMessage(textMessage)">
-                    </div>
-
-                    <div class="button">
-                        <button 
-                        class="btn btn-primary"
-                        @click="addMessage(textMessage)"
-                        >
-                            Aggiungi
-                        </button>
+                    <div class="new-message text-center">
+                        <h2 class="mb-3">
+                            Inserisci Messaggio
+                        </h2>
+                        <div class="input mb-3">
+                            <label for="add-text" class="me-1">Aggungi un messaggio alla Chat:</label>
+                            <input type="text" id="add-text" v-model="textMessage" 
+                            @keyup.enter="addMessage(textMessage)">
+                        </div>
+    
+                        <div class="button">
+                            <button 
+                            class="btn btn-primary"
+                            @click="addMessage(textMessage)"
+                            >
+                                Aggiungi
+                            </button>
+                        </div>
                     </div>
                 <!--And col-->
                 </div>
 
                 <div class="col-6">
-                    <h2 class="mb-3">
-                        Chat:
-                    </h2>
-                    
-                    <div class="body-chat d-flex flex-column">
-                        <span 
-                        :class="(messages[index].user) ? 'text-primary' : 'text-end text-success' " 
-                        v-for="message,index in messages">
-                            {{ message.text }}
-                        </span>
+                    <div class="chat">
+                        <h2 class="mb-3 text-center">
+                            Chat:
+                        </h2>
+                        
+                        <div class="body-chat d-flex flex-column">
+                            <p 
+                            :class="(messages[index].user) ? 'bg-danger' : 'bg-success ms-auto' " 
+                            v-for="message,index in messages">
+                                {{ message.text }}
+                            </p>
+                        </div>
                     </div>
                 </div>
                 
             <!--End Row-->
             </div>
-            
+
         </div>
         <!--Fine Div app-->
     </div>

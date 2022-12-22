@@ -1,0 +1,23 @@
+body {
+    background-image: url('../img/bg-img.jpg');
+    background-position: center;
+}
+
+p {
+    font-size: 1.5rem;
+    width: 40%;
+    padding: .7rem;
+    border-radius: 20px;
+}
+
+.body-chat {
+    overflow: scroll;
+    height: 500px;
+}
+
+.new-message,
+.chat {
+    border: 1px solid black;
+    padding: 1rem 0;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
