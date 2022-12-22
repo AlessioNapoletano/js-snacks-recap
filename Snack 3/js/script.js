@@ -34,6 +34,17 @@ createApp({
             );
 
             this.textMessage = "";
+
+            setTimeout( () => {
+                this.messages.push(
+                {
+                    text: 'ufrat t\'apposto',
+                    user: false,
+                });
+            }, 1000);
+        },
+        getRandomText: function () {
+            
         }
         
     },

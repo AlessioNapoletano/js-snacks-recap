@@ -32,13 +32,15 @@
                     </h2>
                     <div class="input mb-3">
                         <label for="add-text" class="me-1">Aggungi un messaggio alla Chat:</label>
-                        <input type="text" id="add-text" v-model="textMessage">
+                        <input type="text" id="add-text" v-model="textMessage" 
+                        @keyup.enter="addMessage(textMessage)">
                     </div>
 
                     <div class="button">
                         <button 
                         class="btn btn-primary"
-                        @click="addMessage(textMessage)">
+                        @click="addMessage(textMessage)"
+                        >
                             Aggiungi
                         </button>
                     </div>
