@@ -8,6 +8,7 @@ createApp({
     data() {
         return {
             textMessage: '',
+            randomText: '',
             messages: 
             [
                 {
@@ -38,18 +39,23 @@ createApp({
             setTimeout( () => {
                 this.messages.push(
                 {
-                    text: 'ufrat t\'apposto',
+                    text: this.getRandomText(),
                     user: false,
                 });
             }, 1000);
         },
         getRandomText: function () {
-            
+            axios.get("https://flynn.boolean.careers/exercises/api/random/sentence").then( (response) => 
+            {                    
+                this.randomText = response.data.response;
+            });
+
+            return this.randomText;
         }
         
     },
 
     created() {
-        
+        this.getRandomText();
     }
 }).mount('#app')
