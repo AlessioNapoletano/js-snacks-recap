@@ -21,24 +21,39 @@
     <div id="app">
         <div class="container">
             <div class="row">
-                <div class="col-6 text-danger">
+
+                <div class="col-2">
+                    <div class="button my-3">
+                        <h2>
+                            Genera un numero casuale
+                        </h2>
+                        <button @click="getRandomNumber" class="btn btn-primary">
+                            genera numero
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-5 text-danger">
+                    <h2>
+                        Numeri Dispari:
+                    </h2>
                     <ul>
                         <li v-for="number in evenNumbers">
                             {{ number }}
                         </li>
                     </ul>
                 </div>
-                <div class="col-6 text-success">
+                <div class="col-5 text-success">
+                    <h2>
+                        Numeri Pari:
+                    </h2>
                     <ul>
                         <li v-for="number in oddNumbers">
                             {{ number }}
                         </li>
                     </ul>
                 </div>
-
-                <button @click="getRandomNumber">
-                    genera numero
-                </button>
+                
             </div>
 
         </div>
