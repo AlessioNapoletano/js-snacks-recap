@@ -29,11 +29,11 @@
                 <div class="row">
                     <div class="col-6">
                         <div id="generate-number" class="box">
-                            <h4 class="mb-2">
+                            <h4 class="mb-4">
                                 Inserisci la quantità di numeri che vuoi aggiungere:
                             </h4>
 
-                            <div class="input mb-2">
+                            <div class="input mb-2 d-inline me-3">
                                 <label class="me-2" for="insert">
                                     Quantità:
                                 </label>
@@ -42,17 +42,25 @@
                                     @keyup.enter="addRandomNumber(amountOfNumbers)">
                             </div>
 
-                            <div class="button">
+                            <div class="button mb-2 d-inline">
                                 <button class="btn btn-primary " @click="addRandomNumber(amountOfNumbers)">
-                                    Aggiungi
+                                    Crea
                                 </button>
                             </div>
 
-                            <div v-show="amountOfNumbers != null" class="output fs-4">
+                            <div v-show="typeof amountOfNumbers === 'number'" class="output fs-4">
                                 <p class="text-success">
                                     Stai per generare {{ amountOfNumbers }} numeri casuali
                                 </p>
+                                
                             </div>
+                            <p v-show="(typeof amountOfNumbers != 'number')" class="text-danger fs-4">
+                                Inserisci Un Numero
+                            </p>
+
+                            <p>
+                                Il numero deve essere compreso tra 1 e 100
+                            </p>
 
                         </div>
 

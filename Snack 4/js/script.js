@@ -10,19 +10,15 @@ createApp({
     data() {
         return {
             amountOfNumbers: null,
-            numbers: []
+            numbers: [],
+            max: 100,
+            min: 1
         }
     },
 
     methods: {
-        //Funzione creata per provare a riempire l
-        // addNumber: function (number) {
-        //     this.numbers.push(number);
-        //     this.amountOfNumbers = null;
-        // },
-
         addRandomNumber: function () {
-            axios.get("https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items="+this.amountOfNumbers).then( (response) => 
+            axios.get("https://flynn.boolean.careers/exercises/api/array/integers?min="+this.min+"&max="+this.max+"&items="+this.amountOfNumbers).then( (response) => 
             {                    
                 this.numbers = response.data.response
             });
@@ -30,11 +26,6 @@ createApp({
             this.amountOfNumbers = null;
         }
     },
-
-    created() {
-        
-        
-    }
 }).mount('#app')
 
 
