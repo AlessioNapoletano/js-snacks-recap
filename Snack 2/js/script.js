@@ -11,7 +11,7 @@ createApp({
         return {
             invitedList: [],
             currentName: "",
-            message: "",
+            message: "",addEventListener
             invited: false,
         }
     },
