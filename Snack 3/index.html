@@ -57,7 +57,7 @@
                         
                         <div class="body-chat d-flex flex-column">
                             <p 
-                            :class="(messages[index].user) ? 'bg-danger' : 'bg-success ms-auto' " 
+                            :class="(messages[index].user) ? 'bg-danger ms-2' : 'bg-success ms-auto me-2' " 
                             v-for="message,index in messages">
                                 {{ message.text }}
                             </p>
